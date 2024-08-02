@@ -4,6 +4,7 @@ import HomeScreenController from './src/HomeScreen/HomeScreenController'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Ionicons'
+import CamerasScreenController from './src/CamerasScreen/CamerasScreenController'
 
 const Tab = createBottomTabNavigator()
 
@@ -14,14 +15,14 @@ const App = (): React.JSX.Element => {
                 <Tab.Navigator
                     screenOptions={{
                         tabBarStyle: {
-                            height: 90,
+                            height: 70,
                             justifyContent: 'center',
                             alignItems: 'center',
                             paddingVertical: 15,
                         },
                         tabBarLabelStyle: {
                             height: '50%',
-                            fontSize: 13,
+                            fontSize: 11,
                             fontWeight: '500',
                         },
                         tabBarActiveTintColor: 'black',
@@ -43,7 +44,7 @@ const App = (): React.JSX.Element => {
                             tabBarLabel: 'Камеры',
                             tabBarIcon: (tabInfo) => <Icon name="camera-outline" size={tabInfo.size} color={tabInfo.color} />,
                         }}
-                        component={HomeScreenController}
+                        component={CamerasScreenController}
                     />
                     <Tab.Screen
                         name="Settings"
@@ -51,7 +52,7 @@ const App = (): React.JSX.Element => {
                             tabBarLabel: 'Настройки',
                             tabBarIcon: (tabInfo) => <Icon name="settings-outline" size={tabInfo.size} color={tabInfo.color} />,
                         }}
-                        component={HomeScreenController}
+                        component={CamerasScreenController}
                     />
                 </Tab.Navigator>
             </SafeAreaView>
